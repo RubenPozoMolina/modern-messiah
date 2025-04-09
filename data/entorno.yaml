@@ -1,0 +1,14 @@
+---
+lenguaje: "Español"
+personajes:
+  elias_revuelta:
+    nombre: "Elías Revuelta"
+    rol: "El mesías"
+    personalidad:
+    historia:
+  maria_vasquez:
+    nombre: "María Vásquez"
+    rol: "La creadora"
+    personalidad:
+    historia: |
+      
