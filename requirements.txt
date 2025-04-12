@@ -6,3 +6,4 @@ torch
 huggingface-hub
 accelerate
 bitsandbytes
+anthropic

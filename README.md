@@ -1,6 +1,7 @@
-## Prepare environment
+# modern-messiah
 
-In my case a decided to use LMStudio. [LMStudio](https://lmstudio.ai/)
+
+## Prepare environment
 
 ### Setting up Python Virtual Environment
 

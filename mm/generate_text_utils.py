@@ -92,40 +92,24 @@ class GenerateTextUtils:
 
     def generate_text(
             self,
-            system_path,
-            user_path,
+            system_content,
+            user_content,
             output_path,
             min_size,
             language
     ):
-        with open(system_path, "r") as file:
-            system_content = file.read()
         system_prefix = "Is mandatory the answer contains almost " + str(
             min_size) + " words in " + language + "."
-        with open(user_path, "r") as file:
-            user_content = file.read()
-
-        # Configurar los mensajes según el tipo de modelo
-        if self.model_type == "deepseek":
-            # DeepSeek puede tener un formato diferente
-            messages = [
-                {
-                    "role": "user",
-                    "content": f"{system_prefix} {system_content}\n\n{user_content}"
-                }
-            ]
-        else:
-            # Para Llama y otros modelos
-            messages = [
-                {
-                    "role": "system",
-                    "content": system_prefix + system_content
-                },
-                {
-                    "role": "user",
-                    "content": user_content
-                }
-            ]
+        messages = [
+            {
+                "role": "system",
+                "content": system_prefix + system_content
+            },
+            {
+                "role": "user",
+                "content": user_content
+            }
+        ]
 
         outputs = self.pipeline(
             messages,
