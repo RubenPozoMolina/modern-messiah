@@ -1,13 +1,13 @@
 import os
 from datetime import datetime
 
+from mm.book_utils import BookUtils
 from mm.config_utils import ConfigUtils
 from mm.generate_text_utils import GenerateTextUtils
 from mm.generate_text_utils_claude import GenerateTextUtilsClaude
 
 
 class ModernMessiah:
-
     config = None
     generate_text_utils = None
     common_info = None
@@ -27,6 +27,8 @@ class ModernMessiah:
     def get_all_files(directory_path):
         all_files = []
         for root, dirs, files in os.walk(directory_path):
+            dirs.sort()
+            files.sort()
             for file in files:
                 full_path = os.path.join(root, file)
                 all_files.append(full_path)
@@ -47,13 +49,22 @@ class ModernMessiah:
 
     def write_chapter(self, chapter_path):
         with open(chapter_path, "r") as f:
-           chapter_content = f.read()
+            chapter_content = f.read()
         timestamp = self.get_timestamp()
-        chapter_file_name =  f"{timestamp}_{os.path.basename(chapter_path)}"
+        chapter_file_name = f"{timestamp}_{os.path.basename(chapter_path)}"
+        output_chapter_path = "".join(
+            [
+                self.config["output_path"],
+                os.sep,
+                "chapters",
+                os.sep,
+                chapter_file_name
+            ]
+        )
         self.generate_text_utils.generate_text(
             self.common_info,
             chapter_content,
-            self.config["output_path"] + os.sep + chapter_file_name,
+            output_chapter_path,
             self.config["chapter_min_size"],
             self.config["language"]
         )
@@ -64,4 +75,15 @@ class ModernMessiah:
             self.config['data_path'] + os.sep + "chapters"
         )
         for chapter in chapters:
-            self.write_chapter(chapter)
+            file_name = os.path.basename(chapter)
+            if file_name not in self.config["excluded"]:
+                self.write_chapter(chapter)
+        book_utils = BookUtils(
+            self.config["output_path"],
+            self.config["output_path"],
+            self.config["title"],
+            self.config["author"],
+            self.config["cover"]
+        )
+        book_utils.create_book()
+

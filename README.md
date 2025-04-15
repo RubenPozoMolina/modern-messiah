@@ -1,5 +1,12 @@
 # modern-messiah
 
+## Requirements
+
+To convert the book from text to mobi and epub you need to have installed calibre
+
+https://manual.calibre-ebook.com/index.html
+
+To execute with a local model you need to have a gpu
 
 ## Prepare environment
 

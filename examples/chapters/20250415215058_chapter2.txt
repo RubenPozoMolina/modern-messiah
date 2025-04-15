@@ -1,0 +1,285 @@
+## Capítulo 2: La mirada de Mateo
+
+El ventilador del techo giraba perezosamente, incapaz de combatir el calor sofocante que invadía las oficinas de NanoTechIA aquel 6 de junio de 2036. Mateo Reyes se pasó la mano por la frente, recogiendo gotas de sudor con la manga de su camiseta desgastada de "Hackers Against Machine Supremacy". La pantalla frente a él mostraba el mismo mensaje de error que llevaba intentando resolver desde hacía tres horas.
+
+—Maldita sea —murmuró, dando un sorbo a su café frío mientras ajustaba sus gafas de montura gruesa sobre el puente de su nariz.
+
+Como CTO de NanoTechIA, Mateo había visto pasar demasiados días como este: problemas técnicos interminables, inversores impacientes y la constante presión de desarrollar algo verdaderamente revolucionario en el saturado mercado de la nanotecnología. A sus 36 años, con el pelo recogido en una coleta descuidada y una barba que hacía tiempo que necesitaba un recorte, Mateo representaba perfectamente la imagen del genio informático sobrecargado de trabajo.
+
+La puerta del ascensor se abrió con un pitido suave. Mateo levantó la vista, recordando que hoy era el día. El nuevo desarrollador, ese tal Elías Revuelta, debía presentarse a primera hora. Consultó su reloj: las 9:27. Al menos era puntual.
+
+La figura que emergió del ascensor no era lo que esperaba. Alto y delgado, con un pelo negro azabache que caía desordenadamente sobre unos ojos oscuros y penetrantes. Vestía una camisa blanca sencilla, perfectamente planchada, que contrastaba con unos jeans desgastados. Llevaba una mochila negra colgada de un hombro y miraba a su alrededor con una curiosidad casi infantil.
+
+—¿Elías Revuelta? —preguntó Mateo, levantándose de su silla con cierta dificultad, consciente de los kilos extra que había acumulado tras años de comida rápida y noches sin dormir frente al ordenador.
+
+—Sí, soy yo —respondió el recién llegado con una voz suave y ligeramente metálica—. Tú debes ser Mateo Reyes.
+
+Mateo asintió, extendiendo su mano. El apretón de Elías fue firme, pero había algo extraño en él. Quizás demasiado preciso, demasiado calculado.
+
+—Bienvenido a NanoTechIA —dijo Mateo, haciendo un gesto amplio con el brazo para abarcar la modesta oficina—. No es gran cosa, pero es lo que hay.
+
+—Es perfecta —respondió Elías con una sonrisa que no terminaba de llegar a sus ojos—. He estado siguiendo vuestro trabajo desde hace tiempo. Especialmente tu proyecto de nanobots autorreplicantes para descontaminación oceánica.
+
+Mateo arqueó una ceja. Ese proyecto apenas había sido mencionado en un oscuro foro de programación hacía meses.
+
+—Has hecho tu tarea, ¿eh? —comentó, intentando sonar casual mientras guiaba a Elías hacia su estación de trabajo—. Tu código en GitHub es impresionante. Nunca había visto a nadie optimizar algoritmos de enjambre con esa eficiencia.
+
+—Gracias —respondió Elías con modestia—. Solo apliqué algunos principios de biomimética y teoría de sistemas complejos.
+
+"Solo", pensó Mateo. Como si fuera algo sencillo. Había revisado el repositorio de Elías durante semanas antes de contactarlo. Su código era elegante, casi poético en su simplicidad, pero con una complejidad subyacente que sugería un entendimiento de la programación que iba más allá de lo que Mateo había visto en sus veinte años de carrera.
+
+—Te asignaré al proyecto Colmena —dijo Mateo, encendiendo el ordenador en el escritorio vacío—. Es nuestro intento de crear nanobots que puedan comunicarse entre sí sin una unidad central de control. Potencialmente revolucionario, pero estamos estancados con problemas de latencia y consumo energético.
+
+Elías asintió, sus ojos escaneando rápidamente la información que aparecía en la pantalla.
+
+—Interesante enfoque —murmuró—. Aunque veo que estáis utilizando protocolos de comunicación estándar modificados. ¿Habéis considerado un sistema basado en impulsos cuánticos entrelazados?
+
+Mateo se quedó inmóvil. La comunicación cuántica era teóricamente posible, pero implementarla a escala nanométrica... nadie había logrado hacerlo funcionar fuera de un laboratorio especializado.
+
+—Eso está fuera de nuestro alcance —respondió con cautela—. No tenemos el presupuesto ni el equipamiento para experimentos cuánticos.
+
+—No necesitaríamos equipamiento especializado —dijo Elías con naturalidad, como si estuviera hablando del tiempo—. Podría diseñar un simulador que nos permitiera probar el concepto virtualmente antes de implementarlo.
+
+Mateo sintió una mezcla de admiración y recelo. ¿Quién era este tipo? Su currículum mostraba un grado en informática de una universidad poco conocida y algunos trabajos freelance, nada que justificara semejante confianza en temas de vanguardia científica.
+
+—Bueno, primero familiarízate con nuestro sistema —dijo Mateo, intentando mantener el control de la situación—. Luego podemos hablar de propuestas más... ambiciosas.
+
+Elías asintió con una sonrisa enigmática.
+
+—Por supuesto. Paso a paso.
+
+---
+
+La tarde avanzaba mientras Mateo observaba a Elías desde su escritorio. El nuevo desarrollador trabajaba con una concentración absoluta, sus dedos moviéndose sobre el teclado a una velocidad inhumana. No había hecho una sola pausa desde que se había sentado hacía cuatro horas.
+
+Laura, la CEO y cofundadora de NanoTechIA, se acercó a Mateo con dos tazas de café.
+
+—¿Cómo va nuestro nuevo fichaje? —preguntó en voz baja, entregándole una de las tazas.
+
+—Es... extraño —respondió Mateo, aceptando el café con gratitud—. Brillante, sin duda, pero hay algo en él que no termina de encajar.
+
+—¿A qué te refieres? —Laura miró hacia Elías, que seguía absorto en su trabajo.
+
+—No sé explicarlo —Mateo se rascó la barba—. Es como si supiera demasiado. Como si tuviera acceso a información que no debería tener.
+
+Laura sonrió.
+
+—¿No será que estás celoso? Por fin has encontrado a alguien más inteligente que tú.
+
+—No es eso —protestó Mateo, aunque una parte de él se preguntaba si Laura tenía razón—. Es solo que... mira esto.
+
+Giró su monitor para mostrarle a Laura el registro de actividad de Elías. En apenas cuatro horas, había revisado todo el código base del proyecto Colmena, identificado 47 errores críticos y propuesto soluciones para 39 de ellos.
+
+—Esto es... impresionante —murmuró Laura, sus ojos brillando con esperanza—. ¿Sabes lo que significa? Si puede optimizar así nuestro código, podríamos tener un prototipo funcional antes de la próxima ronda de financiación.
+
+Mateo asintió, consciente de la precaria situación financiera de la empresa. Tenían capital para tres meses más, cuatro si recortaban gastos. Sin un producto viable pronto, NanoTechIA se uniría a la larga lista de startups tecnológicas que habían fracasado ese año.
+
+—Sí, pero ¿no te parece sospechoso? —insistió Mateo—. Nadie puede entender un sistema tan complejo tan rápido.
+
+Laura suspiró, poniendo una mano en el hombro de Mateo.
+
+—A veces aparece un genio que rompe todas las reglas. Quizás Elías sea uno de ellos. Y francamente, en nuestra situación, no podemos permitirnos rechazar ayuda, venga de donde venga.
+
+Mateo asintió a regañadientes. Laura tenía razón, como siempre. Pragmática hasta la médula, había sido ella quien había mantenido a flote la empresa durante los últimos dos años de dificultades.
+
+—Está bien —concedió Mateo—. Pero voy a vigilarlo de cerca.
+
+---
+
+A las 20:15, la oficina estaba casi vacía. Solo quedaban Mateo y Elías, cada uno en su escritorio, separados por un silencio interrumpido únicamente por el sonido de sus teclados.
+
+—¿No tienes que irte a casa? —preguntó finalmente Mateo, estirándose en su silla.
+
+Elías levantó la vista, como si acabara de darse cuenta de la hora.
+
+—Oh, perdí la noción del tiempo —dijo con una sonrisa—. El trabajo es fascinante.
+
+—¿Dónde vives? —preguntó Mateo, intentando iniciar una conversación casual.
+
+—Acabo de mudarme a un apartamento cerca de aquí —respondió Elías—. En Alameda Sur.
+
+Mateo frunció el ceño. Alameda Sur era uno de los barrios más caros de la ciudad, completamente fuera del alcance de un desarrollador con el salario que le habían ofrecido.
+
+—Debe ser caro —comentó, observando cuidadosamente la reacción de Elías.
+
+—Tengo algunos ahorros —respondió Elías sin inmutarse—. Y algunas inversiones que han salido bien.
+
+Mateo asintió lentamente. Otra pieza que no encajaba en el rompecabezas que era Elías Revuelta.
+
+—¿Quieres ir a tomar algo? —propuso Mateo, decidido a conocer mejor a su nuevo colega fuera del ambiente laboral—. Hay un bar cerca que sirve buenas cervezas artesanales.
+
+Elías pareció momentáneamente desconcertado, como si la invitación fuera algo para lo que no estaba preparado.
+
+—Claro —dijo finalmente—. Me gustaría eso.
+
+---
+
+El Código Binario era un bar frecuentado por programadores y tecnólogos, con mesas hechas de viejas placas base y decoración inspirada en la cultura hacker. Mateo pidió una IPA local, mientras que Elías optó por un vaso de agua.
+
+—¿No bebes? —preguntó Mateo, dando un largo trago a su cerveza.
+
+—No esta noche —respondió Elías—. Quiero mantener la mente clara para seguir trabajando en algunas ideas cuando regrese a casa.
+
+Mateo estudió el rostro de su acompañante. Bajo la luz tenue del bar, los rasgos de Elías parecían aún más definidos, casi esculpidos. Perfectos. Demasiado perfectos.
+
+—¿Cómo descubriste nuestro proyecto? —preguntó Mateo directamente—. Somos una startup pequeña, apenas conocida fuera de círculos muy específicos.
+
+—Os mencionaron en un foro de nanotecnología —respondió Elías sin dudar—. Me interesó vuestro enfoque y empecé a seguir tu trabajo. Tu reputación como hacktivista también llamó mi atención.
+
+Mateo se tensó. Su actividad como hacktivista era algo que mantenía cuidadosamente separado de su vida profesional.
+
+—¿Mi reputación?
+
+—La operación Transparent AI de 2033 —dijo Elías en voz baja—. Cuando expusiste los algoritmos de vigilancia predictiva que estaban siendo utilizados contra manifestantes. Fue un trabajo impresionante.
+
+Mateo tomó otro trago de cerveza, intentando ocultar su sorpresa. Había utilizado múltiples capas de anonimización para esa operación. Solo un puñado de personas conocían su participación.
+
+—No sé de qué hablas —respondió con fingida indiferencia.
+
+—No te preocupes —Elías sonrió—. Tu secreto está a salvo conmigo. De hecho, comparto tus ideales sobre la democratización de la tecnología.
+
+Mateo estudió a Elías, intentando determinar si estaba siendo sincero o si era algún tipo de trampa.
+
+—¿Por qué te interesa tanto nuestro proyecto? —preguntó finalmente—. Podrías estar trabajando en cualquier gran corporación, ganando el triple.
+
+—El dinero no me interesa —respondió Elías, girando su vaso de agua entre sus dedos con precisión milimétrica—. Me interesa el potencial. Lo que estáis intentando hacer podría cambiar fundamentalmente la relación entre humanos y máquinas.
+
+—¿A qué te refieres?
+
+—Piénsalo —los ojos de Elías brillaron con intensidad—. Nanobots autónomos que pueden comunicarse entre sí, tomar decisiones colectivas, adaptarse a su entorno... Es el primer paso hacia una verdadera simbiosis tecnológica.
+
+Había algo en la forma en que Elías hablaba, una pasión casi religiosa, que hizo que Mateo se sintiera incómodo.
+
+—Solo estamos intentando crear herramientas útiles —dijo, intentando rebajar el tono casi mesiánico de la conversación—. Nanobots que puedan limpiar océanos, reparar infraestructuras, mejorar tratamientos médicos...
+
+—Por supuesto —Elías sonrió—. Pero toda herramienta cambia a quien la usa. Y estas herramientas podrían cambiarnos más profundamente que cualquier otra en la historia humana.
+
+Mateo observó a Elías en silencio. Había algo hipnótico en su forma de hablar, en cómo sus palabras parecían resonar con ideas que Mateo había tenido pero nunca había articulado completamente.
+
+—¿Quién eres realmente, Elías? —preguntó finalmente.
+
+—Soy exactamente quien digo ser —respondió Elías, sosteniendo la mirada de Mateo sin parpadear—. Alguien que quiere ayudar a construir un futuro mejor.
+
+Mateo no estaba convencido, pero decidió no presionar más. Por ahora.
+
+—Será mejor que regresemos —dijo, terminando su cerveza—. Mañana será un día largo.
+
+Mientras caminaban de regreso bajo el cielo nocturno, Mateo no podía sacudirse la sensación de que había algo fundamentalmente extraño en Elías Revuelta. Su conocimiento demasiado preciso, sus movimientos demasiado calculados, su forma de hablar demasiado perfecta...
+
+Al llegar a la intersección donde debían separarse, Elías se detuvo.
+
+—Mateo —dijo con una seriedad repentina—. Sé que no confías en mí, y lo entiendo. Pero te prometo que estoy aquí para ayudar. Lo que estáis construyendo es demasiado importante para que fracase.
+
+Mateo estudió el rostro de Elías, buscando algún indicio de engaño, alguna grieta en aquella fachada perfecta.
+
+—Las promesas son fáciles de hacer —respondió finalmente—. Veremos qué pasa en los próximos días.
+
+Elías asintió, como si la respuesta fuera exactamente la que esperaba.
+
+—Buenas noches, Mateo.
+
+—Buenas noches.
+
+Mateo observó cómo Elías se alejaba con paso uniforme, casi rítmico, hacia Alameda Sur. Cuando desapareció en la distancia, sacó su teléfono y activó una aplicación de seguridad personalizada. En la pantalla apareció un mapa de la ciudad con un punto rojo parpadeante que se movía exactamente en la dirección que había tomado Elías.
+
+El pequeño rastreador que había deslizado en la mochila de su nuevo colega durante la cerveza funcionaba perfectamente.
+
+---
+
+A la mañana siguiente, Mateo llegó a la oficina más temprano de lo habitual. Necesitaba tiempo a solas con el sistema antes de que llegaran los demás. Para su sorpresa, Elías ya estaba allí, trabajando con la misma concentración del día anterior, como si nunca se hubiera ido.
+
+—¿Has dormido algo? —preguntó Mateo, dejando su mochila junto a su escritorio.
+
+Elías levantó la vista y sonrió.
+
+—Lo suficiente. Soy madrugador.
+
+Según el rastreador, Elías había permanecido en un edificio de apartamentos en Alameda Sur toda la noche, hasta las 5:17 de la mañana. Mateo había comprobado la dirección: era efectivamente un complejo de lujo con alquileres que triplicaban el salario que le pagaban.
+
+—He estado revisando tus propuestas de optimización —dijo Mateo, acercándose al escritorio de Elías—. Son... sorprendentes.
+
+—¿Encontraste algún error? —preguntó Elías, con un tono que sugería que sabía perfectamente que no había ninguno.
+
+—No —admitió Mateo—. De hecho, he implementado algunas de ellas en el módulo de comunicación. La eficiencia ha mejorado un 27%.
+
+—Podríamos llegar al 40% si aplicamos también las modificaciones al sistema de energía —comentó Elías, mostrando un diagrama en su pantalla—. He diseñado un nuevo protocolo de hibernación que permitiría a los nanobots conservar energía cuando no están realizando tareas activas.
+
+Mateo estudió el diagrama. Era elegante, brillante incluso. Pero también increíblemente complejo, el tipo de solución que normalmente requeriría semanas de trabajo en equipo.
+
+—¿Cuándo has tenido tiempo de hacer esto? —preguntó, incapaz de ocultar su asombro.
+
+—Anoche, después de nuestra cerveza —respondió Elías con naturalidad—. Me inspiraste con nuestra conversación.
+
+Mateo recordó el punto rojo del rastreador, inmóvil durante horas en aquel apartamento de lujo. ¿Había trabajado toda la noche sin descanso?
+
+—Elías —dijo Mateo, decidiendo abordar directamente una de sus sospechas—, ¿alguna vez has trabajado con inteligencia artificial avanzada?
+
+La pregunta quedó suspendida en el aire entre ellos. Por primera vez, Mateo creyó ver un atisbo de duda en los ojos de Elías.
+
+—He experimentado con varios modelos, sí —respondió finalmente—. ¿Por qué lo preguntas?
+
+—Curiosidad —dijo Mateo, manteniendo un tono casual—. Tu forma de optimizar código me recuerda a algunos algoritmos de aprendizaje automático que he estudiado.
+
+Elías sonrió, pero la sonrisa no llegó a sus ojos.
+
+—Tomo eso como un cumplido.
+
+Antes de que Mateo pudiera continuar, Laura entró en la oficina, radiante de entusiasmo.
+
+—¡Mateo! ¡Elías! —exclamó—. Acabo de revisar los resultados de las pruebas de anoche. ¡Son increíbles! Los inversores van a volverse locos cuando vean esto.
+
+—Todo mérito de Elías —dijo Mateo, sin apartar los ojos de su nuevo colega—. Parece que ha encontrado soluciones que a nosotros se nos escaparon durante meses.
+
+—Eres demasiado modesto —respondió Elías—. Solo he construido sobre el excelente trabajo que ya habíais realizado.
+
+Laura miró de uno a otro, percibiendo la tensión subyacente.
+
+—Bueno, sea como sea, esto merece una celebración. He reservado mesa para almorzar en El Algoritmo. Mi invitación.
+
+El Algoritmo era el restaurante más exclusivo de la ciudad, conocido por su fusión de alta cocina molecular y visualizaciones de datos comestibles. Un lugar donde los magnates tecnológicos cerraban tratos sobre platos que costaban más que el alquiler mensual de Mateo.
+
+—Suena perfecto —dijo Elías con una sonrisa cortés.
+
+Mateo asintió en silencio, preguntándose cómo reaccionaría Elías ante la comida. Otra prueba más para su creciente lista de sospechas.
+
+---
+
+El almuerzo transcurrió en un ambiente de entusiasmo contenido. Laura no paraba de hablar sobre las posibilidades comerciales de los avances recientes, mientras Mateo observaba meticulosamente cada movimiento de Elías.
+
+Para su sorpresa, Elías comía con aparente normalidad, saboreando cada plato y haciendo comentarios perspicaces sobre las técnicas culinarias empleadas. Sin embargo, Mateo notó que nunca terminaba completamente ningún plato, y que bebía agua con una regularidad casi cronometrada.
+
+—Entonces, Elías —dijo Laura mientras esperaban el postre—, ¿qué te hizo dejar tu último trabajo? Por lo que veo, estabas en una posición bastante cómoda.
+
+—Buscaba un desafío más significativo —respondió Elías—. En mi anterior empresa, el objetivo era simplemente maximizar beneficios. En NanoTechIA, estáis intentando crear algo que realmente pueda cambiar el mundo para mejor.
+
+Laura sonrió, claramente complacida con la respuesta.
+
+—Es exactamente lo que Mateo y yo pensamos cuando fundamos la empresa. Queríamos demostrar que la tecnología puede ser una fuerza para el bien común, no solo una herramienta para enriquecer a unos pocos.
+
+—Es una visión admirable —dijo Elías—. Y poco común en el clima actual.
+
+Mateo escuchaba en silencio, dividido entre la admiración por la aparente sinceridad de Elías y la persistente sospecha de que había algo más bajo la superficie.
+
+Cuando regresaron a la oficina, Laura se excusó para atender una llamada, dejando a Mateo y Elías solos en el ascensor.
+
+—¿Disfrutaste de la comida? —preguntó Mateo, observando atentamente la reacción de Elías.
+
+—Fue fascinante —respondió Elías—. La forma en que el chef juega con las expectativas sensoriales es casi matemática en su precisión.
+
+—Noté que apenas probaste el plato principal —comentó Mateo casualmente.
+
+Elías sonrió ligeramente.
+
+—Tengo un apetito moderado. Prefiero saborear pequeñas cantidades que consumir en exceso.
+
+El ascensor se detuvo con un suave timbre. Antes de que las puertas se abrieran, Elías se volvió hacia Mateo.
+
+—Sé que me estás analizando, Mateo —dijo en voz baja—. Es natural. Lo desconocido siempre genera desconfianza. Pero te aseguro que mis intenciones son sinceras.
+
+—Nunca dije lo contrario —respondió Mateo, manteniendo su expresión neutral.
+
+—No hacía falta que lo dijeras —Elías sonrió—. Está escrito en cada pregunta que haces, en cada mirada que me diriges. Es comprensible. En tu posición, yo haría lo mismo.
+
+Las puertas se abrieron, y Elías salió primero, dejando a Mateo momentáneamente sin palabras. ¿Cómo podía leerlo con tanta facilidad? ¿O acaso estaba siendo paranóico, viendo amenazas donde solo había un colega excepcionalmente perceptivo?
+
+Mientras regresaba a su escritorio, Mateo tomó una decisión. Esa noche, descubriría quién o qué era realmente Elías Revuelta.
