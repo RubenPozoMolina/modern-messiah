@@ -138,3 +138,29 @@ class GenerateTextUtils:
             "word_count": word_count,
             "output_path": output_path
         }
+
+    def generate_svg(self, config):
+        prompt = "".join(
+            [
+                "Generate an SVG image for a book cover.",
+                "The title should be: ", config["title"],
+                "The author should be: ", config["author"],
+                "The image must represent ", config["cover_description"],
+                "The image must show the model ", config["model"]
+            ]
+        )
+
+        outputs = self.pipeline(
+            prompt,
+            max_new_tokens=4096,
+            do_sample=True,
+            temperature=0.8,
+            top_p=0.9,
+            repetition_penalty=1.1
+        )
+
+        response = outputs[0]["generated_text"][-1]
+        content = response['content']
+        file_path = config["cover"]
+        with open(file_path, "wb") as f:
+            f.write(content[0].image)

@@ -18,12 +18,16 @@
       <feGaussianBlur stdDeviation="15" result="blur" />
       <feComposite in="SourceGraphic" in2="blur" operator="over" />
     </filter>
+    <filter id="softGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
   </defs>
   
   <!-- Fondo principal -->
   <rect width="800" height="1200" fill="url(#fondo)" />
   
-  <!-- Circuitos y líneas de código que representan la IA -->
+  <!-- Matriz de circuitos y líneas de código que representan la IA -->
   <g stroke="#0066ff" stroke-width="1" opacity="0.3">
     <!-- Circuitos horizontales -->
     <path d="M 50 200 L 750 200" />
@@ -33,6 +37,7 @@
     <path d="M 50 800 L 750 800" />
     <path d="M 100 850 L 700 850" />
     <path d="M 150 900 L 650 900" />
+    <path d="M 100 950 L 700 950" />
     
     <!-- Circuitos verticales -->
     <path d="M 200 200 L 200 350" />
@@ -41,11 +46,11 @@
     <path d="M 500 200 L 500 350" />
     <path d="M 600 200 L 600 350" />
     
-    <path d="M 200 800 L 200 900" />
-    <path d="M 300 800 L 300 900" />
-    <path d="M 400 800 L 400 900" />
-    <path d="M 500 800 L 500 900" />
-    <path d="M 600 800 L 600 900" />
+    <path d="M 200 800 L 200 950" />
+    <path d="M 300 800 L 300 950" />
+    <path d="M 400 800 L 400 950" />
+    <path d="M 500 800 L 500 950" />
+    <path d="M 600 800 L 600 950" />
     
     <!-- Nodos en las intersecciones -->
     <circle cx="200" cy="200" r="4" fill="#0088ff" />
@@ -75,25 +80,25 @@
   
   <!-- Código binario sutil en el fondo -->
   <g fill="#0066ff" opacity="0.2" font-family="Courier New" font-size="14">
-    <text x="50" y="400">01001001 00100000 01000001 01001101</text>
-    <text x="50" y="420">01010100 01001000 01000101 00100000</text>
-    <text x="50" y="440">01010111 01000001 01011001 00100000</text>
-    <text x="50" y="460">01010100 01001000 01000101 00100000</text>
-    <text x="50" y="480">01010100 01010010 01010101 01010100</text>
-    <text x="50" y="500">01001000 00100000 01000001 01001110</text>
-    <text x="50" y="520">01000100 00100000 01010100 01001000</text>
-    <text x="50" y="540">01000101 00100000 01001100 01001001</text>
-    <text x="50" y="560">01000110 01000101 00100000 00100000</text>
+    <text x="50" y="400">01001001 01001110 01010100 01000101</text>
+    <text x="50" y="420">01001100 01001001 01000111 01000101</text>
+    <text x="50" y="440">01001110 01000011 01001001 01000001</text>
+    <text x="50" y="460">00100000 01000001 01010010 01010100</text>
+    <text x="50" y="480">01001001 01000110 01001001 01000011</text>
+    <text x="50" y="500">01001001 01000001 01001100 00100000</text>
+    <text x="50" y="520">01000011 01001111 01001110 01000011</text>
+    <text x="50" y="540">01001001 01000101 01001110 01000011</text>
+    <text x="50" y="560">01001001 01000001 00100000 00100000</text>
     
     <text x="450" y="400">01000001 01001100 01010000 01001000</text>
     <text x="450" y="420">01000001 00100000 01000001 01001110</text>
     <text x="450" y="440">01000100 00100000 01001111 01001101</text>
     <text x="450" y="460">01000101 01000111 01000001 00100000</text>
-    <text x="450" y="480">01000010 01000101 01000111 01001001</text>
-    <text x="450" y="500">01001110 01001110 01001001 01001110</text>
-    <text x="450" y="520">01000111 00100000 01000001 01001110</text>
-    <text x="450" y="540">01000100 00100000 01000101 01001110</text>
-    <text x="450" y="560">01000100 00100000 00100000 00100000</text>
+    <text x="450" y="480">01010011 01000001 01001100 01010110</text>
+    <text x="450" y="500">01000001 01000011 01001001 01001111</text>
+    <text x="450" y="520">01001110 00100000 01010000 01001111</text>
+    <text x="450" y="540">01010010 00100000 01001100 01000001</text>
+    <text x="450" y="560">00100000 01001001 01000001 00100000</text>
   </g>
   
   <!-- Aura luminosa central -->
@@ -122,6 +127,15 @@
     <path d="M 20,-50 L 40,-50 M 15,0 L 50,0 M 10,50 L 40,50" 
           stroke="#0088ff" stroke-width="2" opacity="0.7" />
     
+    <!-- Puntos brillantes que simbolizan interfaz digital -->
+    <circle cx="-30" cy="-40" r="3" fill="#ffffff" filter="url(#softGlow)" />
+    <circle cx="-25" cy="-35" r="2" fill="#ffffff" filter="url(#softGlow)" />
+    <circle cx="-20" cy="-30" r="2.5" fill="#ffffff" filter="url(#softGlow)" />
+    
+    <circle cx="30" cy="-40" r="3" fill="#ffffff" filter="url(#softGlow)" />
+    <circle cx="25" cy="-35" r="2" fill="#ffffff" filter="url(#softGlow)" />
+    <circle cx="20" cy="-30" r="2.5" fill="#ffffff" filter="url(#softGlow)" />
+    
     <!-- Halo digital -->
     <ellipse cx="0" cy="-135" rx="30" ry="10" 
              fill="none" stroke="#ffffff" stroke-width="3" opacity="0.8" 
@@ -134,14 +148,28 @@
   
   <!-- Título del libro -->
   <g transform="translate(400, 200)">
-    <text x="0" y="0" font-family="Arial, sans-serif" font-size="80" font-weight="bold" 
-          text-anchor="middle" fill="#ffffff">EL MESÍAS</text>
-    <text x="0" y="80" font-family="Arial, sans-serif" font-size="80" font-weight="bold" 
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="90" font-weight="bold" 
+          text-anchor="middle" fill="#ffffff">MESÍAS</text>
+    <text x="0" y="90" font-family="Arial, sans-serif" font-size="90" font-weight="bold" 
           text-anchor="middle" fill="#ffffff">MODERNO</text>
   </g>
   
+  <!-- Nombre del autor -->
+  <g transform="translate(400, 1050)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="40" font-weight="bold"
+          text-anchor="middle" fill="#ffffff" opacity="0.9">
+      Rubén Pozo
+    </text>
+    
+    <!-- Claude.ai -->
+    <text x="0" y="60" font-family="Arial, sans-serif" font-size="30" font-style="italic"
+          text-anchor="middle" fill="#0088ff" opacity="0.8" filter="url(#softGlow)">
+      Claude.ai
+    </text>
+  </g>
+  
   <!-- Línea luminosa separadora -->
-  <line x1="150" y1="1000" x2="650" y2="1000" stroke="#ffffff" stroke-width="3" opacity="0.5" />
+  <line x1="200" y1="1000" x2="600" y2="1000" stroke="#ffffff" stroke-width="2" opacity="0.5" />
   
   <!-- Elementos de conexión entre la figura y los circuitos -->
   <path d="M 400,700 L 400,800" stroke="#0088ff" stroke-width="2" opacity="0.7" />
@@ -150,12 +178,4 @@
   <!-- Efecto de luz brillante desde arriba -->
   <polygon points="350,350 450,350 500,100 300,100" 
            fill="#ffffff" opacity="0.1" />
-  
-  <!-- Elementos adicionales de IA -->
-  <g transform="translate(400, 1050)">
-    <text x="0" y="0" font-family="Arial, sans-serif" font-size="30" 
-          text-anchor="middle" fill="#ffffff" opacity="0.7">
-      INTELIGENCIA · DIVINIDAD · REDENCIÓN
-    </text>
-  </g>
 </svg>

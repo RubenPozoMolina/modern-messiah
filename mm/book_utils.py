@@ -12,9 +12,18 @@ class BookUtils:
     cover = None
     language = None
     text_files = []
+    book_type = None
 
     def __init__(
-            self, input_path, output_path, title, authors, cover, language='es'
+            self,
+            input_path,
+            output_path,
+            title,
+            authors,
+            cover,
+            language='es',
+            book_type='epub'
+
     ):
         self.input_path = input_path
         self.output_path = output_path
@@ -22,6 +31,9 @@ class BookUtils:
         self.authors = authors
         self.cover = cover
         self.language = language
+        self.book_type = book_type
+        if not os.path.exists(self.output_path):
+            os.makedirs(self.output_path)
         self.get_files_recursively()
 
     def get_files_recursively(self):
@@ -44,7 +56,7 @@ class BookUtils:
     def get_file_name(self):
         return self.title.replace(" ", "_")
 
-    def create_book(self, book_type='mobi'):
+    def create_book(self):
         metadata = {
             'title': self.title,
             'authors': self.authors,
@@ -52,7 +64,7 @@ class BookUtils:
             'cover': self.cover
         }
         html_file = self.create_html_from_text(metadata)
-        return self.create_from_html(html_file, metadata, book_type)
+        return self.create_from_html(html_file, metadata, self.book_type)
 
     def create_html_from_text(self, metadata=None):
         html_content = [
@@ -91,7 +103,7 @@ class BookUtils:
 
         return output_html
 
-    def create_from_html(self, html_file, metadata, book_type='mobi'):
+    def create_from_html(self, html_file, metadata, book_type='epub'):
         output = os.path.join(
             self.output_path,
             self.get_file_name() + '.' +  book_type

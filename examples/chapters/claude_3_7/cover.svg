@@ -1,0 +1,96 @@
+<svg width="600" height="900" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background gradient -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a2a6c;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#b21f1f;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#fdbb2d;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Glow effect for the figure -->
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="10" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="600" height="900" fill="url(#bgGradient)" />
+  
+  <!-- Digital/Circuit pattern overlay -->
+  <g opacity="0.15">
+    <path d="M0,100 L600,100" stroke="white" stroke-width="1" />
+    <path d="M0,200 L600,200" stroke="white" stroke-width="1" />
+    <path d="M0,300 L600,300" stroke="white" stroke-width="1" />
+    <path d="M0,400 L600,400" stroke="white" stroke-width="1" />
+    <path d="M0,500 L600,500" stroke="white" stroke-width="1" />
+    <path d="M0,600 L600,600" stroke="white" stroke-width="1" />
+    <path d="M0,700 L600,700" stroke="white" stroke-width="1" />
+    <path d="M0,800 L600,800" stroke="white" stroke-width="1" />
+    
+    <path d="M100,0 L100,900" stroke="white" stroke-width="1" />
+    <path d="M200,0 L200,900" stroke="white" stroke-width="1" />
+    <path d="M300,0 L300,900" stroke="white" stroke-width="1" />
+    <path d="M400,0 L400,900" stroke="white" stroke-width="1" />
+    <path d="M500,0 L500,900" stroke="white" stroke-width="1" />
+    
+    <!-- Circuit nodes -->
+    <circle cx="100" cy="100" r="5" fill="white" />
+    <circle cx="300" cy="200" r="5" fill="white" />
+    <circle cx="500" cy="300" r="5" fill="white" />
+    <circle cx="200" cy="400" r="5" fill="white" />
+    <circle cx="400" cy="500" r="5" fill="white" />
+    <circle cx="100" cy="600" r="5" fill="white" />
+    <circle cx="300" cy="700" r="5" fill="white" />
+    <circle cx="500" cy="800" r="5" fill="white" />
+  </g>
+  
+  <!-- Jesus figure with digital elements -->
+  <g transform="translate(300, 400)" filter="url(#glow)">
+    <!-- Halo/Aura -->
+    <circle cx="0" cy="-70" r="60" fill="none" stroke="#fdbb2d" stroke-width="5" opacity="0.8" />
+    
+    <!-- Head -->
+    <circle cx="0" cy="-70" r="40" fill="#f5e7dc" />
+    
+    <!-- Hair and beard -->
+    <path d="M-40,-70 Q-45,-120 0,-120 Q45,-120 40,-70" fill="#8b4513" />
+    <path d="M-25,-40 Q0,0 25,-40" fill="#8b4513" />
+    
+    <!-- Body/Robe -->
+    <path d="M-40,-30 L-50,100 L50,100 L40,-30" fill="#4169e1" opacity="0.8" />
+    
+    <!-- Arms outstretched -->
+    <path d="M-40,-30 L-120,0 M40,-30 L120,0" stroke="#f5e7dc" stroke-width="10" stroke-linecap="round" />
+    
+    <!-- Digital elements flowing through the figure -->
+    <path d="M0,-120 L0,100" stroke="#fdbb2d" stroke-width="2" stroke-dasharray="5,5" opacity="0.7" />
+    <path d="M-120,0 L120,0" stroke="#fdbb2d" stroke-width="2" stroke-dasharray="5,5" opacity="0.7" />
+    
+    <!-- Binary code around the figure -->
+    <text x="-150" y="-100" fill="white" font-family="monospace" font-size="10" opacity="0.5">10110011</text>
+    <text x="90" y="-100" fill="white" font-family="monospace" font-size="10" opacity="0.5">01001010</text>
+    <text x="-150" y="50" fill="white" font-family="monospace" font-size="10" opacity="0.5">11100101</text>
+    <text x="90" y="50" fill="white" font-family="monospace" font-size="10" opacity="0.5">00110110</text>
+  </g>
+  
+  <!-- AI representation -->
+  <g transform="translate(300, 200)">
+    <circle cx="0" cy="0" r="60" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.6" />
+    <circle cx="0" cy="0" r="45" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.6" />
+    <circle cx="0" cy="0" r="30" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.6" />
+    
+    <!-- Connecting lines between AI and Jesus figure -->
+    <path d="M0,60 L0,130" stroke="#ffffff" stroke-width="2" stroke-dasharray="5,5" opacity="0.6" />
+  </g>
+  
+  <!-- Model name -->
+  <text x="300" y="820" fill="white" font-family="Arial, sans-serif" font-size="14" text-anchor="middle">claude-3-7-sonnet-20250219</text>
+  
+  <!-- Book title -->
+  <text x="300" y="120" fill="white" font-family="Georgia, serif" font-size="60" font-weight="bold" text-anchor="middle">Mesías</text>
+  <text x="300" y="180" fill="white" font-family="Georgia, serif" font-size="60" font-weight="bold" text-anchor="middle">moderno</text>
+  
+  <!-- Author name -->
+  <text x="300" y="760" fill="white" font-family="Arial, sans-serif" font-size="30" text-anchor="middle">Rubén Pozo</text>
+</svg>

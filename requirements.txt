@@ -8,3 +8,5 @@ accelerate
 bitsandbytes
 anthropic
 beautifulsoup4
+cairosvg
+pillow

@@ -1,5 +1,4 @@
 import os
-from datetime import datetime
 
 from mm.book_utils import BookUtils
 from mm.config_utils import ConfigUtils
@@ -8,6 +7,25 @@ from mm.generate_text_utils_claude import GenerateTextUtilsClaude
 
 
 class ModernMessiah:
+    languages = [
+        {
+            "name": "Spanish",
+            "code": "es"
+        },
+        {
+            "name": "English",
+            "code": "en"
+        },
+        {
+            "name": "French",
+            "code": "fr"
+        },
+        {
+            "name": "Chinese",
+            "code": "zh"
+        }
+    ]
+
     config = None
     generate_text_utils = None
     common_info = None
@@ -34,9 +52,11 @@ class ModernMessiah:
                 all_files.append(full_path)
         return all_files
 
-    @staticmethod
-    def get_timestamp():
-        return datetime.now().strftime("%Y%m%d%H%M%S")
+    def get_language_code(self, language_name):
+        for language in self.languages:
+            if language["name"] == language_name:
+                return language["code"]
+        return None
 
     def get_common_info(self):
         self.common_info = ""
@@ -50,8 +70,7 @@ class ModernMessiah:
     def write_chapter(self, chapter_path):
         with open(chapter_path, "r") as f:
             chapter_content = f.read()
-        timestamp = self.get_timestamp()
-        chapter_file_name = f"{timestamp}_{os.path.basename(chapter_path)}"
+        chapter_file_name = f"{os.path.basename(chapter_path)}"
         output_chapter_path = "".join(
             [
                 self.config["output_path"],
@@ -78,12 +97,15 @@ class ModernMessiah:
             file_name = os.path.basename(chapter)
             if file_name not in self.config["excluded"]:
                 self.write_chapter(chapter)
+        if self.config['cover_generate']:
+            self.generate_text_utils.generate_svg(self.config)
         book_utils = BookUtils(
             self.config["output_path"],
             self.config["output_path"],
             self.config["title"],
             self.config["author"],
-            self.config["cover"]
+            self.config["cover"],
+            self.get_language_code(self.config["language"]),
+            self.config["book_type"]
         )
         book_utils.create_book()
-

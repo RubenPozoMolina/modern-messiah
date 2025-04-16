@@ -1,6 +1,8 @@
 import os
 import anthropic
 
+from mm.image_utils import ImageUtils
+
 
 class GenerateTextUtilsClaude:
     client = None
@@ -95,3 +97,36 @@ class GenerateTextUtilsClaude:
             "word_count": word_count,
             "output_path": output_path
         }
+
+    def generate_svg(self, config):
+        prompt = "".join(
+            [
+                "Generate an SVG image for a book cover.",
+                "The title should be: ", config["title"],
+                "The author should be: ", config["author"],
+                "The image must represent ", config["cover_description"],
+                "The image must show the model ", config["model"]
+            ]
+        )
+        message = self.client.messages.create(
+            model=self.model,
+            messages=[
+                {"role": "user", "content": prompt}
+            ],
+            max_tokens=4000,
+            temperature=0.8,
+            top_p=0.9
+        )
+        file_path = config["output_path"] + os.sep + "cover.svg"
+        svg_content = message.content[0].text
+        svg_start = svg_content.find("<svg")
+        svg_end = svg_content.find("</svg>") + 6
+        if svg_start == -1 or svg_end == -1:
+            raise ValueError("No SVG content found in Claude's response")
+
+        svg_content = svg_content[svg_start:svg_end]
+
+        with open(file_path, "wb") as f:
+            f.write(svg_content.encode("utf-8"))
+
+        ImageUtils.svg_to_jpg(file_path, config["cover"])
