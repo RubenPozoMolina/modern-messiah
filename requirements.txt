@@ -1,0 +1,12 @@
+requests
+pytest
+pyyaml
+transformers
+torch
+huggingface-hub
+accelerate
+bitsandbytes
+anthropic
+beautifulsoup4
+cairosvg
+pillow
