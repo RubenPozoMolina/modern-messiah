@@ -32,8 +32,6 @@ class BookUtils:
         self.cover = cover
         self.language = language
         self.book_type = book_type
-        if not os.path.exists(self.output_path):
-            os.makedirs(self.output_path)
         self.get_files_recursively()
 
     def get_files_recursively(self):

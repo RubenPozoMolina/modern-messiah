@@ -4,6 +4,8 @@ import torch
 from huggingface_hub import login
 from transformers import BitsAndBytesConfig
 
+from mm.image_utils import ImageUtils
+
 
 class GenerateTextUtils:
     model = None
@@ -11,7 +13,7 @@ class GenerateTextUtils:
     model_type = None
 
     def __init__(self, model="meta-llama/Llama-3.1-8B-Instruct"):
-        login(token=os.environ["HUGGINGFACE_TOKEN"])
+        login(token=os.getenv("HUGGINGFACE_TOKEN",""))
         self.model = model
         self.load_model()
 
@@ -56,27 +58,16 @@ class GenerateTextUtils:
             ]
         )
 
-        # Crear mensajes según el tipo de modelo
-        if self.model_type == "deepseek":
-            # DeepSeek utiliza un formato específico
-            continuation_messages = [
-                {
-                    "role": "user",
-                    "content": f"{system_content}\n\n{user_content}"
-                }
-            ]
-        else:
-            # Para Llama y otros modelos
-            continuation_messages = [
-                {
-                    "role": "system",
-                    "content": system_content
-                },
-                {
-                    "role": "user",
-                    "content": user_content
-                }
-            ]
+        continuation_messages = [
+            {
+                "role": "system",
+                "content": system_content
+            },
+            {
+                "role": "user",
+                "content": user_content
+            }
+        ]
 
         continuation = self.pipeline(
             continuation_messages,
@@ -143,10 +134,14 @@ class GenerateTextUtils:
         prompt = "".join(
             [
                 "Generate an SVG image for a book cover.",
+                "The size of the image must be 800 height",
+                "The size of the image must be 1200 width",
                 "The title should be: ", config["title"],
                 "The author should be: ", config["author"],
                 "The image must represent ", config["cover_description"],
-                "The image must show the model ", config["model"]
+                "The image must show the model ", config["model"],
+                "I need output in SVG format.",
+                "svg must not contain links"
             ]
         )
 
@@ -159,8 +154,16 @@ class GenerateTextUtils:
             repetition_penalty=1.1
         )
 
-        response = outputs[0]["generated_text"][-1]
-        content = response['content']
-        file_path = config["cover"]
+        response = outputs[0]["generated_text"]
+        file_path = config["output_path"] + os.sep + "cover.svg"
+        svg_start = response.find("<svg")
+        svg_end = response.find("</svg>") + 6
+        if svg_start == -1 or svg_end == -1:
+            raise ValueError("No SVG content found response")
+
+        svg_content = response[svg_start:svg_end]
+
         with open(file_path, "wb") as f:
-            f.write(content[0].image)
+            f.write(svg_content.encode("utf-8"))
+
+        ImageUtils.svg_to_jpg(file_path, config["cover"])
