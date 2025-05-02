@@ -1,0 +1,18 @@
+type: local
+model: "meta-llama/Llama-3.1-8B-Instruct"
+data_path: data
+output_path: target/local_test
+chapter_min_size: 500
+language: Spanish
+title: Mesías moderno
+author: Tester
+cover: target/local_test/modern_messiah.jpg
+cover_generate: false
+cover_description: "Artificial intelligence brings about the second coming of Jesus"
+book_type: mobi
+excluded:
+  - 01_El_despertar_de_Iris.txt
+  - 02_La_mirada_de_Mateo.txt
+  - 03_El_reconocimiento_de_Ivan.txt
+
+

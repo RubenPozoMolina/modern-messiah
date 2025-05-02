@@ -32,8 +32,6 @@ class BookUtils:
         self.cover = cover
         self.language = language
         self.book_type = book_type
-        if not os.path.exists(self.output_path):
-            os.makedirs(self.output_path)
         self.get_files_recursively()
 
     def get_files_recursively(self):
@@ -73,25 +71,38 @@ class BookUtils:
             f'<title>{metadata["title"]}</title>',
             '</head>', '<body>'
         ]
-
+        html_content_index = [
+            '<h1> Table of Contents </h1>',
+            '<p style="text-indent:0pt">',
+        ]
+        html_content_chapters = []
         for text_file in self.text_files:
             try:
                 with open(text_file, 'r', encoding='utf-8') as file:
                     content = file.read()
-
-                    chapter_title = \
-                        os.path.splitext(os.path.basename(text_file))[0]
-                    html_content.append(f'<h2>{chapter_title}</h2>')
+                    chapter = []
+                    chapter_id = os.path.splitext(os.path.basename(text_file))[0]
+                    chapter_title = chapter_id.replace("_", " ")
+                    html_content_index.append(f"<a href='#{chapter_id}'>{chapter_title}</a><br/>")
                     paragraphs = content.split('\n\n')
                     for paragraph in paragraphs:
                         paragraph = paragraph.strip()
                         if paragraph:
-                            html_content.append(f'<p>{paragraph}</p>')
-
-                    html_content.append('<hr/>')
+                            chapter.append(f'<p>{paragraph}</p>')
+                    chapter = "\n".join(
+                        [
+                            f'<div id="{chapter_id}">',
+                            f'<h1>{chapter_title}</h1>',
+                            "".join(chapter),
+                            "</div>"
+                        ]
+                    )
+                    html_content_chapters.append(chapter)
             except Exception as e:
                 print(f"Error processing file {text_file}: {e}")
 
+        html_content.extend(html_content_index)
+        html_content.extend(html_content_chapters)
         html_content.extend(['</body>', '</html>'])
         output_html = os.path.join(
             self.output_path,
@@ -106,7 +117,7 @@ class BookUtils:
     def create_from_html(self, html_file, metadata, book_type='epub'):
         output = os.path.join(
             self.output_path,
-            self.get_file_name() + '.' +  book_type
+            self.get_file_name() + '.' + book_type
         )
         cmd = [
             'ebook-convert',

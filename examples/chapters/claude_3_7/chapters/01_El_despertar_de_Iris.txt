@@ -1,5 +1,3 @@
-## Capítulo 1: El despertar de Iris
-
 El invierno de 2030 en Montana se presentaba implacable. La nieve había sepultado los caminos que conducían a la cabaña de la doctora María Vásquez, aislándola aún más del mundo exterior. No es que a ella le importara. Después de todo, el aislamiento había sido una elección consciente tras abandonar su vida anterior.
 
 La tormenta azotaba los cristales con furia mientras María, envuelta en un grueso suéter de lana, observaba las montañas a través de la ventana. Turing, el mayor de sus tres gatos, se frotaba contra sus piernas buscando calor. A pocos metros, sobre su escritorio, tres monitores proyectaban líneas interminables de código, ecuaciones diferenciales y gráficos multidimensionales que solo ella podía interpretar.

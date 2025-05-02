@@ -89,16 +89,23 @@ class ModernMessiah:
         )
 
     def write_book(self):
+        if "output_path" in self.config:
+            if not os.path.exists(self.config["output_path"]):
+                os.makedirs(self.config["output_path"])
         self.get_common_info()
         chapters = self.get_all_files(
             self.config['data_path'] + os.sep + "chapters"
         )
+        if "cover_generate" in self.config and self.config['cover_generate']:
+            self.generate_text_utils.generate_svg(self.config)
         for chapter in chapters:
             file_name = os.path.basename(chapter)
-            if file_name not in self.config["excluded"]:
+            exclude_chapter = False
+            if "excluded" in self.config and file_name in self.config[
+                "excluded"]:
+                exclude_chapter = True
+            if not exclude_chapter:
                 self.write_chapter(chapter)
-        if self.config['cover_generate']:
-            self.generate_text_utils.generate_svg(self.config)
         book_utils = BookUtils(
             self.config["output_path"],
             self.config["output_path"],
@@ -109,3 +116,11 @@ class ModernMessiah:
             self.config["book_type"]
         )
         book_utils.create_book()
+
+    def cleanup(self):
+        if self.generate_text_utils is not None:
+            self.generate_text_utils.unload_model()
+            self.generate_text_utils = None
+
+    def __del__(self):
+        self.cleanup()

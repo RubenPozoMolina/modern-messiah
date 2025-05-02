@@ -130,3 +130,7 @@ class GenerateTextUtilsClaude:
             f.write(svg_content.encode("utf-8"))
 
         ImageUtils.svg_to_jpg(file_path, config["cover"])
+
+    def unload_model(self):
+        del self.client
+        self.client = None
