@@ -11,8 +11,8 @@ cover_generate: false
 cover_description: "Artificial intelligence brings about the second coming of Jesus"
 book_type: mobi
 excluded:
-  - chapter1.txt
-  - chapter2.txt
-  - chapter3.txt
+  - 01_El_despertar_de_Iris.txt
+  - 02_La_mirada_de_Mateo.txt
+  - 03_El_reconocimiento_de_Ivan.txt
 
 
