@@ -116,3 +116,11 @@ class ModernMessiah:
             self.config["book_type"]
         )
         book_utils.create_book()
+
+    def cleanup(self):
+        if self.generate_text_utils is not None:
+            self.generate_text_utils.unload_model()
+            self.generate_text_utils = None
+
+    def __del__(self):
+        self.cleanup()

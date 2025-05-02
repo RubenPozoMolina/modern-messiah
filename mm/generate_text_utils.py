@@ -1,16 +1,15 @@
+import gc
 import os
-import transformers
 import torch
 from huggingface_hub import login
-from transformers import BitsAndBytesConfig
-
+from transformers import BitsAndBytesConfig, pipeline
 from mm.image_utils import ImageUtils
 
 
 class GenerateTextUtils:
     model = None
     pipeline = None
-    model_type = None
+
 
     def __init__(self, model="meta-llama/Llama-3.1-8B-Instruct"):
         login(token=os.getenv("HUGGINGFACE_TOKEN",""))
@@ -18,15 +17,15 @@ class GenerateTextUtils:
         self.load_model()
 
     def load_model(self):
+        # Configure 4-bit quantization
         quantization_config = BitsAndBytesConfig(
-            device_map="auto",
             load_in_4bit=True,
             bnb_4bit_compute_dtype=torch.float16,
             bnb_4bit_quant_type="nf4",
             bnb_4bit_use_double_quant=True
         )
 
-        self.pipeline = transformers.pipeline(
+        self.pipeline = pipeline(
             "text-generation",
             model=self.model,
             model_kwargs={
@@ -77,7 +76,10 @@ class GenerateTextUtils:
             top_p=0.9
         )
 
-        additional_content = continuation[0]["generated_text"][-1]['content']
+        additional_content = ""
+        for response_rol in continuation[0]["generated_text"]:
+            if response_rol["role"] == "assistant":
+                additional_content = response_rol["content"]
         content = text + "\n\n" + additional_content
         return content
 
@@ -102,17 +104,17 @@ class GenerateTextUtils:
             }
         ]
 
-        outputs = self.pipeline(
+        response = self.pipeline(
             messages,
-            max_new_tokens=4096,
+            max_new_tokens=2048,
             do_sample=True,
             temperature=0.8,
             top_p=0.9,
-            repetition_penalty=1.1
         )
-
-        response = outputs[0]["generated_text"][-1]
-        content = response['content']
+        content = ""
+        for response_rol in response[0]["generated_text"]:
+            if response_rol["role"] == "assistant":
+                content = response_rol["content"]
 
         word_count = self.count_words(content)
         while word_count < min_size:
@@ -134,14 +136,16 @@ class GenerateTextUtils:
         prompt = "".join(
             [
                 "Generate an SVG image for a book cover.",
-                "The size of the image must be 800 height",
-                "The size of the image must be 1200 width",
+                "The size of the image must be 1200 height",
+                "The size of the image must be 800 width",
                 "The title should be: ", config["title"],
                 "The author should be: ", config["author"],
                 "The image must represent ", config["cover_description"],
                 "The image must show the model ", config["model"],
                 "I need output in SVG format.",
-                "svg must not contain links"
+                "svg must not contain links",
+                "svg must not contain images",
+                "svg must not contain svg tags"
             ]
         )
 
@@ -150,20 +154,39 @@ class GenerateTextUtils:
             max_new_tokens=4096,
             do_sample=True,
             temperature=0.8,
-            top_p=0.9,
-            repetition_penalty=1.1
+            top_p=0.9
         )
 
-        response = outputs[0]["generated_text"]
+        content = outputs[0]["generated_text"]
         file_path = config["output_path"] + os.sep + "cover.svg"
-        svg_start = response.find("<svg")
-        svg_end = response.find("</svg>") + 6
+        svg_start = content.find("<svg")
+        svg_end = content.find("</svg>") + 6
         if svg_start == -1 or svg_end == -1:
             raise ValueError("No SVG content found response")
 
-        svg_content = response[svg_start:svg_end]
+        svg_content = content[svg_start:svg_end].replace(
+            "\n", ""
+        ).replace("\t", "")
 
         with open(file_path, "wb") as f:
             f.write(svg_content.encode("utf-8"))
 
         ImageUtils.svg_to_jpg(file_path, config["cover"])
+
+
+    def unload_model(self):
+        if self.pipeline is not None:
+            del self.pipeline
+            self.pipeline = None
+
+        gc.collect()
+
+        if torch.cuda.is_available():
+            torch.cuda.empty_cache()
+            torch.cuda.reset_peak_memory_stats()
+            torch.cuda.synchronize()
+
+
+
+    def __del__(self):
+        self.unload_model()

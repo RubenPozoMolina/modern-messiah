@@ -14,3 +14,4 @@ class TestModernMessiah:
         modern_messiah = ModernMessiah(config_file)
         modern_messiah.write_book()
         del modern_messiah
+

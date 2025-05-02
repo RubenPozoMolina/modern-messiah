@@ -5,7 +5,7 @@ output_path: target/local_test
 chapter_min_size: 500
 language: Spanish
 title: Mesías moderno
-author: Rubén Pozo
+author: Tester
 cover: target/local_test/modern_messiah.jpg
 cover_generate: true
 cover_description: "Artificial intelligence brings about the second coming of Jesus"
