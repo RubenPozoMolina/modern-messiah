@@ -1,4 +1,3 @@
-El capítulo se titula "La mirada de Mateo"
 En este capítulo se narra el momento en el que Mateo Reyes conoce a Elías Revuelta.
 Mateo es el líder tecnológico (CTO) en una startup que está especializada en nanobots.
 Ha seleccionado a Elías por internet impresionado por sus desarrollos de código abierto.

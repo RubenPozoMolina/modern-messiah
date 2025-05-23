@@ -9,9 +9,20 @@ quantization_config = BitsAndBytesConfig(
     bnb_4bit_use_double_quant=True
 )
 
+system_file = "tests/data/system.txt"
+
+with open(system_file, "r") as file:
+    system_content = file.read()
+
+user_file = "tests/data/user.txt"
+with open(user_file, "r") as file:
+    user_content = file.read()
+
+user_content += "\nEl relato debe tener entre 2500 y 3000 palabras"
+
 messages = [
-    {"role": "system", "content": "You are a pirate chatbot who always responds in pirate speak!"},
-    {"role": "user", "content": "Who are you?"},
+    {"role": "system", "content": system_content},
+    {"role": "user", "content": user_content},
 ]
 
 # Use 4-bit quantization when loading the model
@@ -31,6 +42,16 @@ response = chatbot(
     temperature=0.7,
     top_p=0.9,
 )
+
+output_file = "target/output.txt"
+
+content = ""
 for response_rol in response[0]["generated_text"]:
     if response_rol["role"] == "assistant":
-        print(response_rol["content"])
+        content = response_rol["content"]
+
+with open(output_file, 'w') as f:
+    f.write(content)
+
+print(f"Output written to {output_file}")
+print(f"Word count: {len(content.split())}")

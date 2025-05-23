@@ -1,0 +1,18 @@
+type: local
+model: "mistralai/Mistral-7B-Instruct-v0.3"
+data_path: data
+output_path: target/mistral
+chapter_min_size: 1000
+chapter_max_size: 1500
+language: Spanish
+title: Mesías moderno
+author: Rubén Pozo
+cover: target/mistral/modern_messiah.jpg
+cover_generate: true
+cover_description: "Artificial intelligence brings about the second coming of Jesus"
+book_type: mobi
+config:
+    max_new_tokens: 2048
+    do_sample": True
+    temperature": 0.8
+    top_p": 0.9

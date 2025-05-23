@@ -2,7 +2,7 @@ import os
 
 from mm.book_utils import BookUtils
 from mm.config_utils import ConfigUtils
-from mm.generate_text_utils import GenerateTextUtils
+from mm.generate_text_utils_local import GenerateTextUtilsLocal
 from mm.generate_text_utils_claude import GenerateTextUtilsClaude
 
 
@@ -30,16 +30,22 @@ class ModernMessiah:
     generate_text_utils = None
     common_info = None
 
-    def __init__(self, config_path):
+    def __init__(self, config_path, logger=None):
         config_utils = ConfigUtils(config_path)
         config_utils.load_config()
         self.config = config_utils.get_config()
         if self.config['type'] == "claude":
             self.generate_text_utils = GenerateTextUtilsClaude(
-                self.config["model"]
+                self.config["model"],
+                logger=logger
+            )
+        elif self.config['type'] == "local":
+            self.generate_text_utils = GenerateTextUtilsLocal(
+                self.config["model"],
+                logger=logger
             )
         else:
-            self.generate_text_utils = GenerateTextUtils(self.config["model"])
+            raise ValueError("Model not supported: " + self.config['type'])
 
     @staticmethod
     def get_all_files(directory_path):
@@ -80,11 +86,14 @@ class ModernMessiah:
                 chapter_file_name
             ]
         )
-        self.generate_text_utils.generate_text(
+        self.generate_text_utils.conversation_history.clear()
+        chapter_prompt = "I want to write the chapter that deals with this: " + chapter_content + " \n\n"
+        self.generate_text_utils.generate_text_to_file(
             self.common_info,
-            chapter_content,
+            chapter_prompt,
             output_chapter_path,
             self.config["chapter_min_size"],
+            self.config["chapter_max_size"],
             self.config["language"]
         )
 
@@ -98,6 +107,8 @@ class ModernMessiah:
         )
         if "cover_generate" in self.config and self.config['cover_generate']:
             self.generate_text_utils.generate_svg(self.config)
+
+        self.generate_text_utils.conversation_history.clear()
         for chapter in chapters:
             file_name = os.path.basename(chapter)
             exclude_chapter = False
@@ -121,6 +132,7 @@ class ModernMessiah:
         if self.generate_text_utils is not None:
             self.generate_text_utils.unload_model()
             self.generate_text_utils = None
+            del self.generate_text_utils
 
     def __del__(self):
         self.cleanup()
