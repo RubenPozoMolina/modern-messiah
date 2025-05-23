@@ -1,6 +1,5 @@
 import yaml
 
-
 class ConfigUtils:
     __config = None
 
@@ -10,6 +9,7 @@ class ConfigUtils:
     def load_config(self):
         try:
             self.__config = yaml.safe_load(open(self.config_path))
+
         except Exception as e:
             print(f"Error loading config: {e}")
 

@@ -1,0 +1,18 @@
+type: local
+model: "meta-llama/Llama-3.1-8B-Instruct"
+data_path: data
+output_path: target/meta_llama
+chapter_min_size: 1000
+chapter_max_size: 1500
+language: Spanish
+title: Mesías moderno
+author: Rubén Pozo
+cover: target/meta_llama/modern_messiah.jpg
+cover_generate: true
+cover_description: "Artificial intelligence brings about the second coming of Jesus"
+book_type: mobi
+config:
+    max_new_tokens: 4096
+    do_sample": True
+    temperature": 0.8
+    top_p": 0.9

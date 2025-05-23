@@ -1,0 +1,18 @@
+type: claude
+model: "claude-3-7-sonnet-latest"
+data_path: data
+output_path: examples/claude_3_7
+chapter_min_size: 2500
+chapter_max_size: 3000
+language: Spanish
+title: Mesías moderno
+author: Rubén Pozo
+cover: examples/claude_3_7/modern_messiah.jpg
+cover_generate: true
+cover_description: "Artificial intelligence brings about the second coming of Jesus"
+book_type: epub
+excluded:
+  - 01_El_despertar_de_Iris.txt
+  - 02_La_mirada_de_Mateo.txt
+  - 03_El_reconocimiento_de_Ivan.txt
+  - 04_La_tentación_de_Elías.txt
